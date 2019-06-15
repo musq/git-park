@@ -6,3 +6,4 @@ This repo is a playground for experimenting with git commands.
 
 - Refer to issue #1
 - Try to close issue #1
+- Create a PR
