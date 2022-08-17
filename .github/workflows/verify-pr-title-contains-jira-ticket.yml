@@ -16,4 +16,9 @@ jobs:
       - name: Verify PR title contains JIRA ticket
         env:
           PR_TITLE: ${{ github.event.pull_request.pull_request.title }}
-        run: .github/actions-scripts/verify-pr-title-contains-jira-ticket.sh
+        # run: .github/actions-scripts/verify-pr-title-contains-jira-ticket.sh
+        run: |
+          echo '-------'
+          echo $PR_TITLE
+          echo '-------'
+          exit 1 # prevents further steps from running
