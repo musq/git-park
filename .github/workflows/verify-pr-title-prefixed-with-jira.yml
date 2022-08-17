@@ -1,5 +1,5 @@
 ---
-name: 'PR title'
+name: 'PR Sanity'
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ permissions:
   pull-requests: read
 
 jobs:
-  jira-in-pr-title:
+  pr-title-has-jira:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

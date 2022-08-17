@@ -1,12 +1,12 @@
 ---
-name: 'PR rebased'
+name: 'PR Sanity'
 
 on:
   pull_request:
     types: [opened, reopened, edited, synchronize]
 
 jobs:
-  is-pr-rebased:
+  pr-is-rebased:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
