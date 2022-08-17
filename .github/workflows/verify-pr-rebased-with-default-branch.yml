@@ -3,7 +3,7 @@ name: 'PR rebased'
 
 on:
   pull_request:
-  workflow_dispatch:
+    types: [opened, reopened, edited, synchronize]
 
 jobs:
   is-pr-rebased:
@@ -11,11 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-#       - name: Setup upterm session
-#         uses: lhotari/action-upterm@v1
-#         with:
-#           limit-access-to-actor: true
 
       - name: Verify PR is rebased with the default branch
         run: .github/actions-scripts/verify-pr-rebased-with-default-branch.sh
