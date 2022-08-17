@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# Script to check if PR Title is prefixed with a JIRA ticket.
+# e.g. SM-440: Add TLS support in Kafka
 # Author: Ashish Ranjan
 
 # Unofficial POSIX Shell Strict Mode
@@ -8,13 +10,10 @@ set -o errexit
 set -o nounset
 IFS=$(printf '\n\t')
 
-
-echo "---------"
-echo "$PR_TITLE"
-echo "---------"
-
 if [ -z "$PR_TITLE" ]
 then
       echo "PR title was not found"
       exit 1
 fi
+
+echo "$PR_TITLE" | awk '/^[A-Z]{2,9}-[0-9]{1,6}: .*/' | grep . > /dev/null
