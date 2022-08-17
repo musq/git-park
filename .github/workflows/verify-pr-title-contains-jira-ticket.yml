@@ -1,6 +1,6 @@
 ---
 
-name: 'PR title: JIRA ticket'
+name: 'PR title'
 
 on:
   pull_request:
@@ -10,18 +10,13 @@ permissions:
   pull-requests: read
 
 jobs:
-  check-jira-ticket-in-pr-title:
+  jira-in-pr-title:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Verify PR title contains JIRA ticket
+      - name: Verify PR title is prefixed with JIRA ticket
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: .github/actions-scripts/verify-pr-title-contains-jira-ticket.sh
-        # run: |
-        #   echo '-------'
-        #   echo $PR_TITLE
-        #   echo '-------'
-        #   exit 1 # prevents further steps from running
