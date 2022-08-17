@@ -1,0 +1,19 @@
+---
+
+name: 'PR title: JIRA ticket'
+
+on:
+  pull_request:
+    types: [opened, reopened, edited]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  check-jira-ticket-in-pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify PR title contains JIRA ticket
+        env:
+          PR_TITLE: ${{ github.event.pull_request.pull_request.title }}
+        run: ./.github/actions-scripts/verify-pr-title-contains-jira-ticket.sh
