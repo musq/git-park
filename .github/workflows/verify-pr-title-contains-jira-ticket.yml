@@ -21,4 +21,5 @@ jobs:
           echo '-------'
           echo $PR_TITLE
           echo '-------'
+          env
           exit 1 # prevents further steps from running
