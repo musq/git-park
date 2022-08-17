@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-# Script to check if PR Title is prefixed with a JIRA ticket.
-# e.g. SM-440: Add TLS support in Kafka
+# Script to check if feature branch in a PR is rebased on top of the
+# target branch.
 # Author: Ashish Ranjan
 
 # Unofficial POSIX Shell Strict Mode
