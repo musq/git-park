@@ -12,5 +12,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Verify PR is rebased with the default branch
-        run: .github/actions-scripts/verify-pr-rebased-with-default-branch.sh
+      - name: Verify PR is rebased on the target branch
+        run: .github/actions-scripts/verify-pr-rebased-on-target-branch.sh
