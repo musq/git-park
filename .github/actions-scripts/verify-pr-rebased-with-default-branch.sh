@@ -25,8 +25,6 @@ fi
 git fetch origin "$GITHUB_BASE_REF"
 git fetch origin "$GITHUB_HEAD_REF"
 
-# commits=$(git rev-list --count "origin/$GITHUB_HEAD_REF..origin/$GITHUB_BASE_REF")
-
 commits=$(git log "origin/$GITHUB_HEAD_REF..origin/$GITHUB_BASE_REF")
 
 if [ -n "$commits" ]
