@@ -18,4 +18,4 @@ jobs:
       - name: Verify PR title is prefixed with JIRA ticket
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
-        run: .github/actions-scripts/verify-pr-title-contains-jira-ticket.sh
+        run: .github/actions-scripts/verify-pr-title-prefixed-with-jira.sh
