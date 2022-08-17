@@ -8,3 +8,5 @@ This repo is a playground for experimenting with git commands.
 - Try to close issue #1
 - Create a PR
 - Test private email push
+
+## New feature branch
