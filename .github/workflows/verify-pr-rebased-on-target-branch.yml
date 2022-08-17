@@ -1,0 +1,16 @@
+---
+name: 'PR Sanity'
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+jobs:
+  pr-is-rebased:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Verify PR is rebased on the target branch
+        run: .github/actions-scripts/verify-pr-rebased-on-target-branch.sh

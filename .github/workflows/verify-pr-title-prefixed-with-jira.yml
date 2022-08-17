@@ -1,0 +1,21 @@
+---
+name: 'PR Sanity'
+
+on:
+  pull_request:
+    types: [opened, reopened, edited]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  pr-title-has-jira:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Verify PR title is prefixed with JIRA ticket
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: .github/actions-scripts/verify-pr-title-prefixed-with-jira.sh
